@@ -1,7 +1,2 @@
 src/components/api-authorization/*.js
 src/components/api-authorization/*.jsx
-src/registerServiceWorker.js
-src/components/Counter.js
-src/components/FetchData.js
-*.js
-*.jsx
