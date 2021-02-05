@@ -30,8 +30,7 @@
     "acceptance-tests",
     "webpack",
     "jest",
-    "src/setupTests.ts",
-    "src/components/api-authorization"
+    "src/setupTests.ts"
   ],
   "include": [
     "src"
