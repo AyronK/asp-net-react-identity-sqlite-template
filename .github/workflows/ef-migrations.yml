@@ -22,9 +22,9 @@ jobs:
       run: dotnet restore
       
     - name: Update database
+      env:
+        ASPNETCORE_ENVIRONMENT: CI
       run: |
         dotnet tool install --global dotnet-ef
         dotnet tool restore
         dotnet ef database update
-      env:
-        ASPNETCORE_ENVIRONMENT: CI
