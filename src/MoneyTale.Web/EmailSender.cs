@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity.UI.Services;
+using MoneyTale.Web.Identity.Services;
 
 namespace MoneyTale.Web
 {
