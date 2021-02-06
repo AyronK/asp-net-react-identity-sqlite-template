@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace MoneyTale.Web.Models
+namespace MoneyTale.Web.Identity.Models
 {
     public class ApplicationUser : IdentityUser
     {

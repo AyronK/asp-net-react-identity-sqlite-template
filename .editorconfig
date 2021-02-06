@@ -50,3 +50,5 @@ dotnet_diagnostic.CA1310.severity = error
 
 # RCS1208: Reduce 'if' nesting.
 dotnet_diagnostic.RCS1208.severity = silent
+
+roslynator.max_line_length = 180
