@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MoneyTale.Web.Models;
+using MoneyTale.Web.Identity.Models;
 
 namespace MoneyTale.Web.Areas.Identity.Pages.Account.Manage
 {
