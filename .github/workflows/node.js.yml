@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  npm-ci:
 
     runs-on: ubuntu-latest
     env:
