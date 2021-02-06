@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		tests\_tests.targets = tests\_tests.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{212CF9B2-84C3-4B43-AB32-59374B059E66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{BF2268FB-1F41-46C8-8926-1805C3E984E2} = {212CF9B2-84C3-4B43-AB32-59374B059E66}
 		{C2FD1F1D-7D48-4463-B576-6853997FD411} = {26D96A1F-E692-42B1-A4BA-0AF356A32D13}
 		{5B0EC61B-6EC0-4F30-B6BB-4B37DFFF7D53} = {C2FD1F1D-7D48-4463-B576-6853997FD411}
 		{4F0B37EB-C808-4FE1-A333-877581A59C90} = {5B0EC61B-6EC0-4F30-B6BB-4B37DFFF7D53}
