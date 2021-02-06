@@ -20,10 +20,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneyTale.Web.Tests", "test
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{26D96A1F-E692-42B1-A4BA-0AF356A32D13}"
 	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
 		.editorconfig = .editorconfig
+		.gitignore = .gitignore
 		src\_shared.ruleset = src\_shared.ruleset
 		src\_shared.targets = src\_shared.targets
 		tests\_tests.targets = tests\_tests.targets
+		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{212CF9B2-84C3-4B43-AB32-59374B059E66}"
