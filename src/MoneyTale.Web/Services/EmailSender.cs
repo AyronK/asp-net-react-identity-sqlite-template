@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using MoneyTale.Web.Identity.Services;
 
-namespace MoneyTale.Web
+namespace MoneyTale.Web.Services
 {
     internal class EmailSender : IEmailSender
     {

@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MoneyTale.Web.Identity.Models;
 using MoneyTale.Web.Identity.Services;
+using MoneyTale.Web.Services;
 
 namespace MoneyTale.Web
 {
@@ -32,6 +33,24 @@ namespace MoneyTale.Web
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
+            ConfigureIdentity(services);
+
+            services.AddControllersWithViews();
+            services.AddRazorPages();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MoneyTale.Web", Version = "v1" });
+            });
+
+            // In production, the React files will be served from this directory
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "ClientApp/build";
+            });
+        }
+
+        private static void ConfigureIdentity(IServiceCollection services)
+        {
             services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
@@ -55,19 +74,6 @@ namespace MoneyTale.Web
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();
-
-            services.AddControllersWithViews();
-            services.AddRazorPages();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MoneyTale.Web", Version = "v1" });
-            });
-
-            // In production, the React files will be served from this directory
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/build";
-            });
 
             services.AddSingleton<IEmailSender, EmailSender>();
         }
