@@ -23,9 +23,10 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
       
+    - name: Install dotnet-ef
+      run: dotnet tool install --global dotnet-ef
+      
     - name: Update database
       env:
         ASPNETCORE_ENVIRONMENT: CI
-      run: dotnet tool install --global dotnet-ef
-      run: dotnet tool restore
       run: dotnet ef database update
