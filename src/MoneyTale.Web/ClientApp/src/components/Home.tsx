@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 
 const Home: FunctionComponent = () => (
   <div>
-    <h1>MoneyTale</h1>
+    <h1>Welocome to MoneyTale</h1>
   </div>
 );
 
