@@ -12,6 +12,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{4F0B37EB-C808-4FE1-A333-877581A59C90}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\dotnet-ci.yml = .github\workflows\dotnet-ci.yml
+		.github\workflows\ef-migrations.yml = .github\workflows\ef-migrations.yml
+		.github\workflows\node.js.yml = .github\workflows\node.js.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4F20C5C5-A6A5-4164-9567-78F79FA0CBE9}"
