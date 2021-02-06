@@ -12,11 +12,26 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{4F0B37EB-C808-4FE1-A333-877581A59C90}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\dotnet-ci.yml = .github\workflows\dotnet-ci.yml
+		.github\workflows\ef-migrations.yml = .github\workflows\ef-migrations.yml
+		.github\workflows\node.js.yml = .github\workflows\node.js.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4F20C5C5-A6A5-4164-9567-78F79FA0CBE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyTale.Web.Tests", "tests\MoneyTale.Web.Tests\MoneyTale.Web.Tests.csproj", "{CF271336-4529-4E96-A2C4-05E186735092}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneyTale.Web.Tests", "tests\MoneyTale.Web.Tests\MoneyTale.Web.Tests.csproj", "{CF271336-4529-4E96-A2C4-05E186735092}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{26D96A1F-E692-42B1-A4BA-0AF356A32D13}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		src\_shared.ruleset = src\_shared.ruleset
+		src\_shared.targets = src\_shared.targets
+		tests\_tests.targets = tests\_tests.targets
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{212CF9B2-84C3-4B43-AB32-59374B059E66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +52,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{BF2268FB-1F41-46C8-8926-1805C3E984E2} = {212CF9B2-84C3-4B43-AB32-59374B059E66}
+		{C2FD1F1D-7D48-4463-B576-6853997FD411} = {26D96A1F-E692-42B1-A4BA-0AF356A32D13}
 		{5B0EC61B-6EC0-4F30-B6BB-4B37DFFF7D53} = {C2FD1F1D-7D48-4463-B576-6853997FD411}
 		{4F0B37EB-C808-4FE1-A333-877581A59C90} = {5B0EC61B-6EC0-4F30-B6BB-4B37DFFF7D53}
 		{CF271336-4529-4E96-A2C4-05E186735092} = {4F20C5C5-A6A5-4164-9567-78F79FA0CBE9}

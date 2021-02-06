@@ -8,6 +8,7 @@ using MoneyTale.Web.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace MoneyTale.Web
 {
@@ -19,12 +20,12 @@ namespace MoneyTale.Web
         }
 
         public IConfiguration Configuration { get; }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlite(Configuration
+                    .GetConnectionString("DefaultConnection")));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -39,6 +40,10 @@ namespace MoneyTale.Web
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MoneyTale2.Web", Version = "v1" });
+            });
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -46,12 +51,14 @@ namespace MoneyTale.Web
                 configuration.RootPath = "ClientApp/build";
             });
         }
-        
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MoneyTale.Web v1"));
                 app.UseMigrationsEndPoint();
             }
             else

@@ -12,3 +12,6 @@ artifacts/
 \.vs/
 
 .idea/
+
+/data/*.db
+!/data/SQLite.empty.db
