@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using MoneyTale.Web.Identity.Models;
-using MoneyTale.Web.Identity.Services;
 
 namespace MoneyTale.Web.Areas.Identity.Pages.Account.Manage
 {

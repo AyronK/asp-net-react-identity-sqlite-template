@@ -13,7 +13,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using MoneyTale.Web.Identity.Models;
-using MoneyTale.Web.Identity.Services;
 
 namespace MoneyTale.Web.Areas.Identity.Pages.Account
 {
