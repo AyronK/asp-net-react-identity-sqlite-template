@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{212CF9B2-84C3-4B43-AB32-59374B059E66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyTale.Web.Identity", "src\MoneyTale.Web.Identity\MoneyTale.Web.Identity.csproj", "{449827E2-1574-466C-8950-881FE7C9CA46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{CF271336-4529-4E96-A2C4-05E186735092}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF271336-4529-4E96-A2C4-05E186735092}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF271336-4529-4E96-A2C4-05E186735092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{449827E2-1574-466C-8950-881FE7C9CA46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{449827E2-1574-466C-8950-881FE7C9CA46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{449827E2-1574-466C-8950-881FE7C9CA46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{449827E2-1574-466C-8950-881FE7C9CA46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{5B0EC61B-6EC0-4F30-B6BB-4B37DFFF7D53} = {C2FD1F1D-7D48-4463-B576-6853997FD411}
 		{4F0B37EB-C808-4FE1-A333-877581A59C90} = {5B0EC61B-6EC0-4F30-B6BB-4B37DFFF7D53}
 		{CF271336-4529-4E96-A2C4-05E186735092} = {4F20C5C5-A6A5-4164-9567-78F79FA0CBE9}
+		{449827E2-1574-466C-8950-881FE7C9CA46} = {212CF9B2-84C3-4B43-AB32-59374B059E66}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7F15B8FE-382B-420C-A43D-117254C56ACD}
