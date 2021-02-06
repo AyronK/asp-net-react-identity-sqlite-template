@@ -11,7 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import { LoginMenu } from "./api-authorization/LoginMenu";
 
-import "./NavMenu.css";
+import "./NavMenu.scss";
 
 interface NavMenuState {
   collapsed: boolean;

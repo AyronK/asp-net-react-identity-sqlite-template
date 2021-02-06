@@ -9,6 +9,12 @@
 # production
 /build
 
+# raw css
+/public/css/**/*.css
+*.css.map
+*.sass.map
+*.scss.map
+
 # misc
 .DS_Store
 .env.local
