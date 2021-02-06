@@ -12,3 +12,5 @@ artifacts/
 \.vs/
 
 .idea/
+
+/data/*.db
