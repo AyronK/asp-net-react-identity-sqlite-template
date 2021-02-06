@@ -16,7 +16,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4F20C5C5-A6A5-4164-9567-78F79FA0CBE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyTale.Web.Tests", "tests\MoneyTale.Web.Tests\MoneyTale.Web.Tests.csproj", "{CF271336-4529-4E96-A2C4-05E186735092}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneyTale.Web.Tests", "tests\MoneyTale.Web.Tests\MoneyTale.Web.Tests.csproj", "{CF271336-4529-4E96-A2C4-05E186735092}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{26D96A1F-E692-42B1-A4BA-0AF356A32D13}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		src\_shared.ruleset = src\_shared.ruleset
+		src\_shared.targets = src\_shared.targets
+		tests\_tests.targets = tests\_tests.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -19,7 +19,7 @@ namespace MoneyTale.Web
         }
 
         public IConfiguration Configuration { get; }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -46,7 +46,7 @@ namespace MoneyTale.Web
                 configuration.RootPath = "ClientApp/build";
             });
         }
-        
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
