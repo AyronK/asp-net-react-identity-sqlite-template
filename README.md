@@ -1,5 +1,5 @@
 # MoneyTale
-
+______
 ![NPM CI](https://github.com/AyronK/money-tale/workflows/NPM%20CI/badge.svg?branch=main)  
 ![.NET CI](https://github.com/AyronK/money-tale/workflows/.NET%20CI/badge.svg?branch=main)  
 
@@ -14,7 +14,6 @@
 - open a browser and go to `https://localhost:8001/` or `http://localhost:8000/`
 
 ## Setting up SQLite
-
 - Install GUI from https://sqlitebrowser.org/dl/
 - Generate database file `/data/SQLite.dev.db`
   - If you decide to choose a different name you need to update connection string in `appsettings.json`
