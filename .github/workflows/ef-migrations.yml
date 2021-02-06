@@ -10,8 +10,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env:
-        working-directory: ./src/MoneyTale.Web
 
     steps:
     - uses: actions/checkout@v2
@@ -29,4 +27,5 @@ jobs:
     - name: Update database
       env:
         ASPNETCORE_ENVIRONMENT: CI
+      working-directory: ./src/MoneyTale.Web
       run: dotnet ef database update
