@@ -6,9 +6,23 @@ import {
 } from "./ApiAuthorizationConstants";
 import authService from "./AuthorizeService";
 
-export default class AuthorizeRoute extends Component<any, any> {
+export interface AuthorizeRouteProps {
+  path: string;
+  component: React.ComponentType<any>;
+}
+
+interface AuthorizeRouteState {
+  ready: boolean;
+  authenticated: boolean;
+}
+
+export default class AuthorizeRoute extends Component<
+  AuthorizeRouteProps,
+  AuthorizeRouteState
+> {
   private subscription: number | undefined;
-  constructor(props) {
+
+  constructor(props: Readonly<AuthorizeRouteProps>) {
     super(props);
 
     this.state = {
@@ -46,16 +60,19 @@ export default class AuthorizeRoute extends Component<any, any> {
     const redirectUrl = `${ApplicationPaths.Login}?${
       QueryParameterNames.ReturnUrl
     }=${encodeURIComponent(returnUrl)}`;
+
     if (!ready) {
       return <div />;
     }
-    const { component: Component, ...rest } = this.props;
+
+    const { component: InnerComponent, ...rest } = this.props;
+
     return (
       <Route
         {...rest}
         render={(props) => {
           if (authenticated) {
-            return <Component {...props} />;
+            return <InnerComponent {...props} />;
           }
           return <Redirect to={redirectUrl} />;
         }}
