@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { Container } from "reactstrap";
 import NavMenu from "./NavMenu";
 
