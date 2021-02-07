@@ -32,6 +32,7 @@
     "react/react-in-jsx-scope": "off",
     "lines-between-class-members": "off",
     "@typescript-eslint/lines-between-class-members": "off",
-    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }]
+    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
+    "no-case-declarations": "warn"
   }
 }

@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import { Route } from "react-router";
-import { Login } from "./Login";
-import { Logout } from "./Logout";
+import Login from "./Login";
+import Logout from "./Logout";
 import {
   ApplicationPaths,
   LoginActions,
