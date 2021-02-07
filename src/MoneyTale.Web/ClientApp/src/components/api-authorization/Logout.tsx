@@ -1,32 +1,38 @@
-import React from "react";
 import { Component } from "react";
-import authService from "./AuthorizeService";
-import { AuthenticationResultStatus } from "./AuthorizeService";
+import authService, { AuthenticationResultStatus } from "./AuthorizeService";
 import {
   QueryParameterNames,
   LogoutActions,
   ApplicationPaths,
 } from "./ApiAuthorizationConstants";
 
+export interface LogoutProps {
+  action: string;
+}
+
+interface LogoutState {
+  isReady: boolean;
+  message: string | undefined;
+}
+
 // The main responsibility of this component is to handle the user's logout process.
 // This is the starting point for the logout process, which is usually initiated when a
 // user clicks on the logout button on the LoginMenu component.
-export class Logout extends Component {
+class Logout extends Component<LogoutProps, LogoutState> {
   constructor(props) {
     super(props);
 
     this.state = {
       message: undefined,
       isReady: false,
-      authenticated: false,
     };
   }
 
   componentDidMount() {
-    const action = this.props.action;
+    const { action } = this.props;
     switch (action) {
       case LogoutActions.Logout:
-        if (!!window.history.state.state.local) {
+        if (window.history.state.state.local) {
           this.logout(this.getReturnUrl());
         } else {
           // This prevents regular links to <app>/authentication/logout from triggering a logout
@@ -52,27 +58,23 @@ export class Logout extends Component {
     this.populateAuthenticationState();
   }
 
-  render() {
-    const { isReady, message } = this.state;
-    if (!isReady) {
-      return <div></div>;
+  getReturnUrl = (state?) => {
+    const params = new URLSearchParams(window.location.search);
+    const fromQuery = params.get(QueryParameterNames.ReturnUrl);
+    if (fromQuery && !fromQuery.startsWith(`${window.location.origin}/`)) {
+      // This is an extra check to prevent open redirects.
+      throw new Error(
+        "Invalid return url. The return url needs to have the same origin as the current page.",
+      );
     }
-    if (!!message) {
-      return <div>{message}</div>;
-    } else {
-      const action = this.props.action;
-      switch (action) {
-        case LogoutActions.Logout:
-          return <div>Processing logout</div>;
-        case LogoutActions.LogoutCallback:
-          return <div>Processing logout callback</div>;
-        case LogoutActions.LoggedOut:
-          return <div>{message}</div>;
-        default:
-          throw new Error(`Invalid action '${action}'`);
-      }
-    }
-  }
+    return (
+      (state && state.returnUrl) ||
+      fromQuery ||
+      `${window.location.origin}${ApplicationPaths.LoggedOut}`
+    );
+  };
+
+  navigateToReturnUrl = (returnUrl) => window.location.replace(returnUrl);
 
   async logout(returnUrl) {
     const state = { returnUrl };
@@ -116,27 +118,30 @@ export class Logout extends Component {
   }
 
   async populateAuthenticationState() {
-    const authenticated = await authService.isAuthenticated();
-    this.setState({ isReady: true, authenticated });
+    await authService.isAuthenticated();
+    this.setState({ isReady: true });
   }
 
-  getReturnUrl(state) {
-    const params = new URLSearchParams(window.location.search);
-    const fromQuery = params.get(QueryParameterNames.ReturnUrl);
-    if (fromQuery && !fromQuery.startsWith(`${window.location.origin}/`)) {
-      // This is an extra check to prevent open redirects.
-      throw new Error(
-        "Invalid return url. The return url needs to have the same origin as the current page.",
-      );
+  render() {
+    const { isReady, message } = this.state;
+    if (!isReady) {
+      return <div />;
     }
-    return (
-      (state && state.returnUrl) ||
-      fromQuery ||
-      `${window.location.origin}${ApplicationPaths.LoggedOut}`
-    );
-  }
-
-  navigateToReturnUrl(returnUrl) {
-    return window.location.replace(returnUrl);
+    if (message) {
+      return <div>{message}</div>;
+    }
+    const { action } = this.props;
+    switch (action) {
+      case LogoutActions.Logout:
+        return <div>Processing logout</div>;
+      case LogoutActions.LogoutCallback:
+        return <div>Processing logout callback</div>;
+      case LogoutActions.LoggedOut:
+        return <div>{message}</div>;
+      default:
+        throw new Error(`Invalid action '${action}'`);
+    }
   }
 }
+
+export default Logout;

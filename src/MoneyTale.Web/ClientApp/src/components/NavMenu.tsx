@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import {
   Collapse,
   Container,
@@ -9,7 +9,7 @@ import {
   NavLink,
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import { LoginMenu } from "./api-authorization/LoginMenu";
+import LoginMenu from "./api-authorization/LoginMenu";
 
 import "./NavMenu.scss";
 
@@ -18,7 +18,7 @@ interface NavMenuState {
 }
 
 class NavMenu extends Component<any, NavMenuState> {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
@@ -54,6 +54,16 @@ class NavMenu extends Component<any, NavMenuState> {
                 <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/">
                     Home
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink tag={Link} className="text-dark" to="/counter">
+                    Counter
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink tag={Link} className="text-dark" to="/fetch-data">
+                    Fetch data
                   </NavLink>
                 </NavItem>
                 <LoginMenu />
