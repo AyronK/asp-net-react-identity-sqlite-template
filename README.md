@@ -51,12 +51,12 @@ _Powered by React_
      
 #### CICD
 _Powered by GitHub actions_  
-    - **.NET Build and Test**  
-      Action `dotnet-ci.yml` runs dotnet build and tests.  
-    - **NPM Build and Test**  
-      Action `node.js.yml` runs npm build and tests.  
-    - **Entity Framework migrations**  
-      Action `ef-migrations.yml` runs all migrations from scratch on an empty SQLite database placed in `/data` directory.  
+   - **.NET Build and Test**  
+     Action `dotnet-ci.yml` runs dotnet build and tests.  
+   - **NPM Build and Test**  
+     Action `node.js.yml` runs npm build and tests.  
+   - **Entity Framework migrations**  
+     Action `ef-migrations.yml` runs all migrations from scratch on an empty SQLite database placed in `/data` directory.  
 
 ## Important endpoints  
 - `/` root of React App
