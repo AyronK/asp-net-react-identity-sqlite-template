@@ -5,24 +5,24 @@
 ![EF Migrations](https://github.com/AyronK/money-tale/workflows/EF%20Migrations/badge.svg?branch=main)
 
 ## Template
-This repository can be used as a template for **ASP.NET** 5 application with **React + TypeScript** SPA frontend. The solution and project files contain **Money Tale** as application name reference, but it can be easily changed by renaming all the projects and directories (remember about project references in .sln and .csproj files) as well as all string literals across the application.
+This repository can be used as a template for **ASP.NET 5** application with **React + TypeScript** SPA frontend. The solution and project files contain **Money Tale** as application name, but it can be easily changed by renaming all the projects and directories (remember about project references in .sln and .csproj files) as well as all string literals across the application. It should not be as time-consuming as setting up everything else!
 
 ### Template Content
 
 #### Backend  
 _Powered by ASP.NET 5_  
    - **SQLite integration**  
-     SQLite is used due to being more lightweight for smaller applications and easier to deploy to production without funds.  
+     SQLite is used due to being more lightweight for smaller applications and easier to deploy to production without excessive funds.  
    - **ASP.NET Identity**  
      Integrated use of ASP.NET Identity library  
         - SQLite was chosen as a primary database for the template. It can be switched to other DB easily.  
         - Generated Identity views in a separate project `MoneyTale.Web.Identity` for easy control over those views.  
    - **Entity Framework**  
-     An entry point for full usage in the application. Required to work with ASP.NET Identity. Set up to use SQLite as it was chosen as a primary database for the template.  
+     An entry point for full usage in the application. It is also required to work with ASP.NET Identity. Set up to use SQLite as it was chosen as a primary database for the template. My choice is to use Entity Framework for Identity and maintaining changes to database schema only. You can choose it for data querying as well or choose any other library.  
    - **Swagger**  
-     Integrated Swagger usage. See "Important endpoint" section to get started.  
+     Integrated Swagger usage. See "Important endpoint" section to get started. You can also import generated OpenAPI3.0 file into a Postman or other API consuming application supporting OpenAPI3.0.
    - **Docker**  
-     Enabled Docker support for running application with SPA altogether.  
+     Enabled Docker support for running application with SPA altogether. There is only basic Docker support with HTTPS development certificate handler. If you need more complex Dockerfile, docker compose or any other improvement you are free to go from that point.  
    - **Analyzers**  
      Included Roslynator code analysis with a subjective set of rules that can be easily adjusted by modifying `/src/_shared.ruleset` file.  
    - **NUnit**  
@@ -37,11 +37,11 @@ _Powered by ASP.NET 5_
 #### Frontend
 _Powered by React_     
    - **Enabled TypeScript**  
-     Enabled TypeScript and reworked most of Identity components to follow it's rules.  
+     Enabled TypeScript and reworked most of the Identity components to follow it's rules. Ideally, all the Identity components should be refactored.    
    - **Integrated ASP.Net Identity support**    
      Client app uses components provided by ASP.NET Identity template. Enables authorized routing, login handling and API authorization.  
    - **ESLint and Prettier**  
-     Enabled ESLint and Prettier analysis. Rules set is subjective but is mostly inherited from Airbnb pattern.  
+     Enabled ESLint and Prettier analysis. The ruleset is subjective, however, it is mostly inherited from Airbnb pattern.  
    - **Jest**  
      Support for Jest tests.  
    - **SCSS**  
@@ -73,5 +73,5 @@ _____
 ## Setting up SQLite  
 - Install GUI from https://sqlitebrowser.org/dl/
 - Generate database file `/data/SQLite.dev.db`
-  - If you decide to choose a different name you need to update connection string in `appsettings.json`
+  - If you decide to choose a different name you need to update the connection string in `appsettings.json`
 - Run migrations using `dotnet ef database update`
