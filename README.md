@@ -12,13 +12,13 @@ This repository can be used as a template for **ASP.NET 5** application with **R
 #### Backend  
 _Powered by ASP.NET 5_  
    - **SQLite integration**  
-     SQLite is used due to being more lightweight for smaller applications and easier to deploy to production without excessive funds.  
+     Thi application uses SQLite because it is more lightweight for smaller applications and easier to deploy to production without excessive funds.  
    - **ASP.NET Identity**  
      Integrated use of ASP.NET Identity library  
         - SQLite was chosen as a primary database for the template. It can be switched to other DB easily.  
         - Generated Identity views in a separate project `MoneyTale.Web.Identity` for easy control over those views.  
    - **Entity Framework**  
-     An entry point for full usage in the application. It is also required to work with ASP.NET Identity. Set up to use SQLite as it was chosen as a primary database for the template. My choice is to use Entity Framework for Identity and maintaining changes to database schema only. You can choose it for data querying as well or choose any other library.  
+     An entry point for full usage in the application. In addition, ASP.NET Identity required it to deploy its schema. EF was set up to use SQLite as it was chosen as a primary database for the template. My choice is to use Entity Framework for Identity and maintaining changes to database schema only. You can choose it for data querying as well or choose any other library.  
    - **Swagger**  
      Integrated Swagger usage. See "Important endpoint" section to get started. You can also import generated OpenAPI3.0 file into a Postman or other API consuming application supporting OpenAPI3.0.
    - **Docker**  
@@ -27,8 +27,8 @@ _Powered by ASP.NET 5_
      Included Roslynator code analysis with a subjective set of rules that can be easily adjusted by modifying `/src/_shared.ruleset` file.  
    - **NUnit**  
      This template contains one NUnit project and a shared targets file for future projects. Feel free to use another testing library as well, just keep it all together in `/tests/_tests.targets` file to avoid duplicating references and using the same code analysis ruleset.  
-   - **.Net repository directories structure**  
-     This repository follows .Net recommended repository structure. See more at [gist](https://gist.github.com/davidfowl/ed7564297c61fe9ab814).  
+   - **.NET repository directories structure**  
+     This repository follows .NET recommended repository structure. See more at [gist](https://gist.github.com/davidfowl/ed7564297c61fe9ab814).  
    - **Shared targets for src and test projects**  
      Use a predifiened templates for new src projects adding `<Import Project="../_shared.targets" />` to your `.csproj`.
      Use a predifiened templates for new test projects adding `<Import Project="../_tests.targets" />` to your `.csproj` of NUnit project.  
@@ -37,11 +37,11 @@ _Powered by ASP.NET 5_
 #### Frontend
 _Powered by React_     
    - **Enabled TypeScript**  
-     Enabled TypeScript and reworked most of the Identity components to follow it's rules. Ideally, all the Identity components should be refactored.    
-   - **Integrated ASP.Net Identity support**    
+     Enabled TypeScript. ASP.NET Identity components were mostly rewritten to TypeScript as well. Ideally, every component should be refactored.    
+   - **Integrated ASP.NET Identity support**    
      Client app uses components provided by ASP.NET Identity template. Enables authorized routing, login handling and API authorization.  
    - **ESLint and Prettier**  
-     Enabled ESLint and Prettier analysis. The ruleset is subjective, however, it is mostly inherited from Airbnb pattern.  
+     Enabled ESLint and Prettier analysis. The ruleset is subjective, however, it is mostly inherited from Airbnb pattern. Rules can be adjusted in `.eslintrc.json` and `.prettierrc` files inside ClientApp directory (`/src/MoneyTale.Web/ClientApp`).
    - **Jest**  
      Support for Jest tests.  
    - **SCSS**  
