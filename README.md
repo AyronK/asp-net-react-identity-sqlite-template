@@ -76,6 +76,6 @@ _____
   - If you decide to choose a different name you need to update the connection string in `appsettings.json`
 - Run migrations using `dotnet ef database update`
 
-## Changelog
+## Changelog format
 This project follows the format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
