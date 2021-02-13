@@ -1,8 +1,8 @@
 # Money Tale
 
-![NPM CI](https://github.com/AyronK/money-tale/workflows/NPM%20CI/badge.svg?branch=main)  
-![.NET CI](https://github.com/AyronK/money-tale/workflows/.NET%20CI/badge.svg?branch=main)  
-![EF Migrations](https://github.com/AyronK/money-tale/workflows/EF%20Migrations/badge.svg?branch=main)
+![.NET CI](https://github.com/AyronK/asp-net-react-identity-sqlite-template/workflows/.NET%20CI/badge.svg?branch=main)
+![NPM CI](https://github.com/AyronK/asp-net-react-identity-sqlite-template/workflows/NPM%20CI/badge.svg?branch=main)
+![EF Migrations](https://github.com/AyronK/asp-net-react-identity-sqlite-template/workflows/EF%20Migrations/badge.svg?branch=main)
 
 ## Template
 This repository can be used as a template for **ASP.NET 5** application with **React + TypeScript** SPA frontend. The solution and project files contain **Money Tale** as application name, but it can be easily changed by renaming all the projects and directories (remember about project references in .sln and .csproj files) as well as all string literals across the application. It should not be as time-consuming as setting up everything else!
