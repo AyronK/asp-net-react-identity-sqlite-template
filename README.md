@@ -53,7 +53,7 @@ _Powered by React_
 _Powered by GitHub actions_  
     - **.NET Build and Test**  
       `dotnet-ci.yml` runs dotnet build and tests.  
-    - **NPM Build and Test*  
+    - **NPM Build and Test**  
       `node.js.yml` runs npm build and tests.  
     - **Entity Framework migrations**  
       `ef-migrations.yml` runs all migrations from scratch on an empty SQLite database placed in `/data` directory.  
