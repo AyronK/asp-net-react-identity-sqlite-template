@@ -1,6 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
-	<Import Project="../_tests.targets"/>
+	<Import Project="../_tests.targets" />
 
 	<PropertyGroup>
 		<IsPackable>false</IsPackable>
